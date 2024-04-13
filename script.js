@@ -30,8 +30,10 @@ function game() {
     }
 
     if (player_score > computer_score) {
+        alert(`You won the game! Finally, a human has beaten me...`);
         return `You won the game! Finally, a human has beaten me...`;
     } else if (player_score < computer_score) {
+        alert(`You lost the game! I am the ultimate AI!`);
         return `You lost the game! I am the ultimate AI!`;
     } else {
         if (confirm("It's a tie! I knew you couldn't beat me! But I feel generous... Do you want another chance?")) {
@@ -45,10 +47,13 @@ function game() {
 function playerPlay() {
     let player_input = prompt('Enter your choice: ROCK, PAPER, or SCISSORS').trim();
     player_input = player_input.toUpperCase();
+
     if (player_input === 'ROCK' || player_input === 'PAPER' || player_input === 'SCISSORS') {
         return player_input;
     } else {
+        // left the else for readability
         console.log("That's not even a choice! What a silly human... \n");
+        alert("That's not even a choice! What a silly human... \n");
         return playerPlay();
     }
 }
@@ -76,7 +81,7 @@ alert("I am Brankonator, the most powerful AI in the world! I am going to take o
     + "with my unbeatable Rock, Paper, Scissors game! \n");
 alert("A brain as powerful as mine can't be beaten by mere humans! \n");
 if(confirm("Do you dare to challenge me? The game is best of 5 rounds!")) {
-    console.log(game());
+    alert(game());
 } else {
     alert("You are not ready to face me! Goodbye!");
 }
