@@ -18,11 +18,13 @@ function game() {
             result_message = `It's a tie! We both chose ${player_selection}`;
         }
 
-        console.log(`
-            Round ${i + 1} \n
+        result_message = `\n
+            Round ${i + 1}/5 \n
             ${result_message} \n
-                You ${player_score} - ${computer_score} Brankonator \n`
-            );
+            You ${player_score} - ${computer_score} Brankonator \n`;
+
+        console.log(result_message);
+        alert(result_message);
 
         if (player_score === 3 || computer_score === 3) {
             break;
@@ -39,6 +41,7 @@ function game() {
         if (confirm("It's a tie! I knew you couldn't beat me! But I feel generous... Do you want another chance?")) {
             return game();
         } else {
+            console.log("You can't beat me! Goodbye!");
             alert("You can't beat me! Goodbye!");
         }
     }
